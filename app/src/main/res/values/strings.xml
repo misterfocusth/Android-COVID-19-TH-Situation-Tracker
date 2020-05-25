@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">COVID-19 TH Situation Tracker</string>
+    <string name="IMAGE_WIDTH">30dp</string>
+    <string name="IMAGE_HEIGHT">30dp</string>
+
+    <string name="box_header">"        อัพเดทสถานการณ์ COVID-19 ในประเทศไทย        "</string>
+
+    <string name="box_updatedDate">"         ข้อมูลอัพเดทเมื่อวันที่ : replace"</string>
+    <string name="box_newcases">"             จำนวนผู้ติดเชื้อรายใหม่\n\n    เพิ่มขึ้น _ คน (+ _)"</string>
+    <string name="box_recovered">"             จำนวนผู้รักษาหายเเล้ว\n\n     เพิ่มขึ้น _ คน (+ _)"</string>
+    <string name="box_death">"\n\n\nจำนวนผู้เสียชีวิต\n\nเพิ่มขึ้น _ คน (+ _)"</string>
+    <string name="box_today_update">"        : วันนี้ประเทศไทยมีผู้ติดเชื้อ COVID-19\nรายใหม่จำนวน (newCase) จำนวนผู้รักษาหายวันนี้เพิ่มขึ้น (newRecovered) คน คงเหลือผู้รักษาตัวอยู่ในโรงพยาบาล\nจำนวน (newHospitalized) คน ผู้เสียชีวิตรายใหม่วันนี้จำนวน (newDeath) คน"</string>
+
+    <string name="box_you_can_help">"คุณเองก็สามารถช่วยหยุดการเเพร่ระบาดได้เพียง..."</string>
+    <string name="box_you_can_help_pay_attention">"คอยติดตามเเละปฎิบัติตามคำเเนะนำจาก\nหน่วยงานรัฐ"</string>
+    <string name="box_you_can_help_social_distancing">"รักษาระยะห่างจากผู้อื่นเพื่อความปลอดภัย"</string>
+    <string name="box_you_can_help_wash_your_hands">"ล้างมือด้วยน้ำยาล้างมือหรือเจลเเอลกอฮอ\nเเละรักษาความสะอาดภายนอกร่างกายบ่อยๆ"</string>
+    <string name="box_you_can_help_wear_mask">"อย่าลืมสวมหน้ากากอนามัยทุกครั้งที่ออกจากบ้าน"</string>
+
+    <string name="box_footer_own">"Made By : Focus Sila Pakdeewong (MisterFocusTH)"</string>
+    <string name="box_footer_thanks">"ขอบคุณข้อมูลจาก : กรมควบคุมโรค กระทรวงสาธารณสุข\nเเละ สํานักงานพัฒนารัฐบาลดิจิทัล"</string>
+</resources>
