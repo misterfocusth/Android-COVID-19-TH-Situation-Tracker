@@ -2,7 +2,7 @@
 [Android App] : COVID-19 TH Situation Tracker ติดตามสถานการณ์โควิท-19 ในประเทศไทยเเบบอัพเดทวันต่อวัน (ข้อมูลจากกรมควบคุมโรค กระทรวงสาธารณสุข เเละ สํานักงานพัฒนารัฐบาลดิจิทัล)
 
 # ดาวน์โหลด - Download It !
-ดาวน์โหลดเลย ! : (https://github.com/MisterFocusTH/Android-COVID-19-TH-Situation-Tracker/releases/download/1.0/com.misterfocusth.covid19tracker.apk)
+ดาวน์โหลดเลย ! : (https://github.com/MisterFocusTH/Android-COVID-19-TH-Situation-Tracker/releases/download/1.1/com.misterfocusth.covid19tracker.apk)
 
 # ความต้องการในการใช้งาน - Requirements
 - การเข้าถึงอินเตอร์เน็ต (Internet Access)
