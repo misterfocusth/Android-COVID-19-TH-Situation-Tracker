@@ -79,18 +79,6 @@
                 app:layout_constraintTop_toTopOf="@+id/textView_updatedDate"
                 app:srcCompat="@drawable/img_date" />
 
-            <ImageView
-                android:id="@+id/imageView13"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:contentDescription="Image_Database"
-                android:padding="1dp"
-                app:layout_constraintBottom_toBottomOf="@+id/btn_reportIssue"
-                app:layout_constraintEnd_toStartOf="@+id/btn_viewOnBrowser"
-                app:layout_constraintStart_toEndOf="@+id/btn_reportIssue"
-                app:layout_constraintTop_toTopOf="@+id/btn_reportIssue"
-                app:srcCompat="@drawable/img_database" />
-
             <TextView
                 android:id="@+id/textView_newcases"
                 android:layout_width="wrap_content"
@@ -101,7 +89,7 @@
                 android:gravity="center"
                 android:padding="6dp"
                 android:text="@string/box_newcases"
-                android:textColor="#F57C00"
+                android:textColor="#FF6D00"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView_updatedDate" />
@@ -128,7 +116,7 @@
                 android:gravity="center"
                 android:padding="6dp"
                 android:text="@string/box_recovered"
-                android:textColor="#388E3C"
+                android:textColor="#00C853"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView_newcases" />
@@ -156,7 +144,7 @@
                 android:gravity="center"
                 android:padding="6dp"
                 android:text="@string/box_death"
-                android:textColor="#D32F2F"
+                android:textColor="#D50000"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/textView_newcases"
@@ -175,12 +163,42 @@
                 app:srcCompat="@drawable/img_death" />
 
             <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/shape_newcases_box"
+                android:padding="6dp"
+                android:text="@string/box_total_cases"
+                android:textAlignment="center"
+                android:textColor="#FF6D00"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/textView2"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/textView_todayUpdate"
+                app:layout_constraintTop_toBottomOf="@+id/textView_recovered" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/shape_recovered_box"
+                android:padding="6dp"
+                android:text="@string/box_total_recovered"
+                android:textAlignment="center"
+                android:textColor="#00C853"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/textView_todayUpdate"
+                app:layout_constraintHorizontal_bias="0.967"
+                app:layout_constraintStart_toEndOf="@+id/textView_recovered"
+                app:layout_constraintTop_toBottomOf="@+id/textView_recovered" />
+
+            <TextView
                 android:id="@+id/textView_todayUpdate"
                 android:layout_width="325dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
                 android:layout_marginTop="15dp"
-                android:layout_marginEnd="15dp"
                 android:background="@drawable/shape_box"
                 android:gravity="center"
                 android:padding="6dp"
@@ -189,7 +207,7 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView_recovered" />
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
 
             <ImageView
                 android:id="@+id/imageView5"
@@ -210,8 +228,9 @@
                 android:text="@string/box_you_can_help"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView_todayUpdate" />
+                app:layout_constraintTop_toBottomOf="@+id/divider" />
 
             <ImageView
                 android:id="@+id/imageView9"
@@ -315,8 +334,9 @@
                 android:text="@string/box_footer_own"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView12" />
+                app:layout_constraintTop_toBottomOf="@+id/divider2" />
 
             <TextView
                 android:id="@+id/textView12"
@@ -329,6 +349,7 @@
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btn_reportIssue" />
 
@@ -337,13 +358,14 @@
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/rounded_button"
                 android:padding="5dp"
                 android:text="@string/button_reportIssues"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/btn_viewOnBrowser"
+                app:layout_constraintHorizontal_bias="0.277"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
@@ -353,14 +375,51 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:layout_marginEnd="15dp"
+                android:layout_marginEnd="28dp"
                 android:background="@drawable/rounded_button"
                 android:padding="5dp"
                 android:text="@string/button_open_official_website"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_reportIssue"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView11" />
+                app:layout_constraintTop_toBottomOf="@+id/textView11"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="300dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/colorText"
+                app:layout_constraintEnd_toEndOf="@+id/textView_todayUpdate"
+                app:layout_constraintStart_toStartOf="@+id/textView_todayUpdate"
+                app:layout_constraintTop_toBottomOf="@+id/textView_todayUpdate" />
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="300dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/colorText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView12" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="30dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="382dp" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 

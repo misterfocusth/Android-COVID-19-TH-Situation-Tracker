@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             receivedData[1] = jsonObject.getString("NewConfirmed");
                             receivedData[2] = jsonObject.getString("NewRecovered");
                             receivedData[3] = jsonObject.getString("NewDeaths");
-                            receivedData[4] = jsonObject.getString("NewHospitalized");
+                            receivedData[4] = jsonObject.getString("Hospitalized");
 
                             replaceData(); // Replace Received Data To TextViews
                             updateTextView(); // Update Text On TextViews
@@ -157,7 +157,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 i++;
             }
             if (i == 2) {
-                replacedString = replacedString.replaceAll("newHospitalized", receivedData[4]); //New Hospitalized
+                replacedString = replacedString.replaceAll("Hospitalized", receivedData[4]); //New Hospitalized
                 i++;
             }
             if (i == 3) {
