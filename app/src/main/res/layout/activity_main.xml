@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/pullToRefresh"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:scrollbars="none">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -163,7 +164,7 @@
                 app:srcCompat="@drawable/img_death" />
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/textViewTotalCases"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
@@ -173,13 +174,13 @@
                 android:textAlignment="center"
                 android:textColor="#FF6D00"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toStartOf="@+id/textView2"
+                app:layout_constraintEnd_toStartOf="@+id/textViewTotalRecovered"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/textView_todayUpdate"
+                app:layout_constraintStart_toStartOf="@+id/textView_recovered"
                 app:layout_constraintTop_toBottomOf="@+id/textView_recovered" />
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/textViewTotalRecovered"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
@@ -189,7 +190,7 @@
                 android:textAlignment="center"
                 android:textColor="#00C853"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@+id/textView_todayUpdate"
+                app:layout_constraintEnd_toEndOf="@+id/textView_death"
                 app:layout_constraintHorizontal_bias="0.967"
                 app:layout_constraintStart_toEndOf="@+id/textView_recovered"
                 app:layout_constraintTop_toBottomOf="@+id/textView_recovered" />
@@ -205,9 +206,9 @@
                 android:text="@string/box_today_update"
                 android:textAlignment="viewStart"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView" />
+                app:layout_constraintEnd_toEndOf="@+id/textViewTotalRecovered"
+                app:layout_constraintStart_toStartOf="@+id/textViewTotalCases"
+                app:layout_constraintTop_toBottomOf="@+id/textViewTotalCases" />
 
             <ImageView
                 android:id="@+id/imageView5"

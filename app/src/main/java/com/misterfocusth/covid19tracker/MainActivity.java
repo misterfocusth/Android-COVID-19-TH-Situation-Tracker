@@ -43,9 +43,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static final String API_URL = "https://covid19.th-stat.com/api/open/today";
     private static final String OFFICIAL_URL = "https://covid19.ddc.moph.go.th/";
 
-    public static String[] replacedData = new String[5]; // Received Data + TextViews Text
-    public static String[] textViewData = new String[5]; // Original TextViews Text
-    public static String[] receivedData = new String[5]; // Received Data From API
+    public static String[] replacedData = new String[7]; // Received Data + TextViews Text
+    public static String[] textViewData = new String[7]; // Original TextViews Text
+    public static String[] receivedData = new String[7]; // Received Data From API
 
     private String TAG = "MainActivity : ";
 
@@ -87,11 +87,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     public void onResponse(JSONObject response) {
                         try {
                             JSONObject jsonObject = new JSONObject(response.toString());
-                            receivedData[0] = jsonObject.getString("UpdateDate");
-                            receivedData[1] = jsonObject.getString("NewConfirmed");
-                            receivedData[2] = jsonObject.getString("NewRecovered");
-                            receivedData[3] = jsonObject.getString("NewDeaths");
-                            receivedData[4] = jsonObject.getString("Hospitalized");
+                            receivedData[0] = jsonObject.getString("UpdateDate"); // GET : Date
+                            receivedData[1] = jsonObject.getString("NewConfirmed"); // GET : New Cases
+                            receivedData[2] = jsonObject.getString("NewRecovered"); // GET : New Recovered
+                            receivedData[3] = jsonObject.getString("NewDeaths"); // GET : New Death
+                            receivedData[4] = jsonObject.getString("Hospitalized"); // Get Total Hospitalized
 
                             replaceData(); // Replace Received Data To TextViews
                             updateTextView(); // Update Text On TextViews
