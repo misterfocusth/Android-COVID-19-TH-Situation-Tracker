@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1028416111142",
+    "firebase_url": "https://covid-19-th-situation-tracker.firebaseio.com",
+    "project_id": "covid-19-th-situation-tracker",
+    "storage_bucket": "covid-19-th-situation-tracker.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1028416111142:android:ceaea0b5fe884a085fdce7",
+        "android_client_info": {
+          "package_name": "com.misterfocusth.covid19tracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1028416111142-kddspht3v3amrnqtgc8jalf25ek616ng.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjG-j0TtSBs2zbhud5rEepLwthNbh7vXo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1028416111142-kddspht3v3amrnqtgc8jalf25ek616ng.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

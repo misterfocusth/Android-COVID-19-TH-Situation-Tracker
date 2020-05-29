@@ -9,14 +9,22 @@
     <string name="dialog_no_internet_message">"ไม่สามารถรับข้อมูล กรุณาเชื่อมต่ออินเตอร์เน็ต"</string>
     <string name="dialog_no_internet_button">"ปิด"</string>
 
+    <string name="dialog_new_version_update_title">"ตรวจพบเวอร์ชั่นใหม่พร้อมใช้งาน"</string>
+    <string name="dialog_new_version_update_message">"เเอพพลิเคชั่นมีการอัพเดท คุณต้องการอัพเดทเป็นเวอร์ชั่นล่าสุดหรือไม่ ?"</string>
+    <string name="dialog_new_version_update_button_update">"อัพเดท"</string>
+    <string name="dialog_new_version_update_button_close">"ปิด"</string>
+
+    <string name="dialog_loading_title">"กำลังเรียกข้อมูล..."</string>
+    <string name="dialog_loading_message">"กำลังเรียกข้อมูล โปรดรอสักครู่"</string>
+
     <string name="box_header">"        อัพเดทสถานการณ์ COVID-19 ในประเทศไทย        "</string>
 
     <string name="box_updatedDate">"         ข้อมูลอัพเดทเมื่อวันที่ : date"</string>
-    <string name="box_newcases">"             จำนวนผู้ติดเชื้อรายใหม่\n\n    เพิ่มขึ้น _ คน (+ _)"</string>
-    <string name="box_recovered">"             จำนวนผู้รักษาหายเเล้ว\n\n     เพิ่มขึ้น _ คน (+ _)"</string>
+    <string name="box_newcases">"             จำนวนผู้ติดเชื้อรายใหม่\n\n     เพิ่มขึ้น _ คน (+ _)"</string>
+    <string name="box_recovered">"             จำนวนผู้รักษาหายเเล้ว\n\n      เพิ่มขึ้น _ คน (+ _)"</string>
     <string name="box_death">"\n\n\nจำนวนผู้เสียชีวิต\n\nเพิ่มขึ้น _ คน (+ _)"</string>
-    <string name="box_total_cases">"จำนวนผู้ติดเชื้อสะสม\n\ntotalCases คน (+ _)"</string>
-    <string name="box_total_recovered">"รักษาหายเเล้ว\n\ntotalRecovered คน (+ _)"</string>
+    <string name="box_total_cases">"   จำนวนผู้ติดเชื้อสะสม   \n\nทั้งหมด totalCases คน (+ _)"</string>
+    <string name="box_total_recovered">"   จำนวนรักษาหายเเล้ว   \n\nทั้งหมด totalRecovered คน (+ _)"</string>
     <string name="box_today_update">"        : วันนี้ (date) ประเทศไทยมีผู้ติดเชื้อ COVID-19 รายใหม่จำนวน (newCase) คน จำนวนผู้รักษาหายวันนี้เพิ่มขึ้น (newRecovered) คน คงเหลือผู้รักษาตัวอยู่ในโรงพยาบาลจำนวน (Hospitalized) คน ผู้เสียชีวิตรายใหม่\nวันนี้จำนวน (newDeath) คน"</string>
 
     <string name="box_you_can_help">"คุณเองก็สามารถช่วยหยุดการเเพร่ระบาดได้เพียง..."</string>
