@@ -36,7 +36,7 @@ import java.net.InetAddress;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, SwipeRefreshLayout.OnRefreshListener {
 
-    private TextView textUpdatedDate , textNewCases , textNewRecovered , textNewDeath , textTodayUpdate; // TextViews UI Components
+    private TextView textUpdatedDate , textNewCases , textNewRecovered , textNewDeath , textTodayUpdate, textTotalCases, textTotalRecovered; // TextViews UI Components
     private Button btnReportIssues , btnOpenBrowser; // Button UI Components
     private SwipeRefreshLayout mSwipeRefreshLayout; // SwipeRefreshLayout UI Component
     private View view; // View UI Component
@@ -65,6 +65,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         textNewRecovered = findViewById(R.id.textView_recovered);
         textNewDeath = findViewById(R.id.textView_death);
         textTodayUpdate = findViewById(R.id.textView_todayUpdate);
+        textTotalCases = findViewById(R.id.textViewTotalCases);
+        textTotalRecovered = findViewById(R.id.textViewTotalRecovered);
 
         // UI Components - Buttons
         btnReportIssues = findViewById(R.id.btn_reportIssue);
@@ -100,6 +102,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             receivedData[2] = jsonObject.getString("NewRecovered"); // GET : New Recovered
                             receivedData[3] = jsonObject.getString("NewDeaths"); // GET : New Death
                             receivedData[4] = jsonObject.getString("Hospitalized"); // Get Total Hospitalized
+                            receivedData[5] = jsonObject.getString("Confirmed"); // GET : Total Confirmed
+                            receivedData[6] = jsonObject.getString("Recovered"); // GET : Total Recovered
 
                             replaceData(); // Replace Received Data To TextViews
                             updateTextView(); // Update Text On TextViews
@@ -147,11 +151,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         textViewData[2] = getResources().getString(R.string.box_recovered);
         textViewData[3] = getResources().getString(R.string.box_death);
         textViewData[4] = getResources().getString(R.string.box_today_update);
+        textViewData[5] = getResources().getString(R.string.box_total_cases);
+        textViewData[6] = getResources().getString(R.string.box_total_recovered);
 
         replacedData[0] = textViewData[0].replaceAll("date", receivedData[0]); // Updated Date
         replacedData[1] = textViewData[1].replaceAll("_", receivedData[1]); // Update NewCases
         replacedData[2] = textViewData[2].replaceAll("_", receivedData[2]); // Update Recovered
         replacedData[3] = textViewData[3].replaceAll("_", receivedData[3]); // Update NewDeath
+        // Replaced Data 4 : Tooday Update Box Update Below Loop !
+        replacedData[5] = textViewData[5].replaceAll("totalCases", receivedData[5]); // Update Total Cases
+        replacedData[5] = replacedData[5].replaceAll("_", receivedData[1]); // Update New Case In Total Cases Box
+        replacedData[6] = textViewData[6].replaceAll("totalRecovered", receivedData[6]); // Update Total Recovered
+        replacedData[6] = replacedData[6].replaceAll("_", receivedData[2]); // Update New Recovered In Total Recovered Box
 
         String replacedString = "";
 
@@ -187,6 +198,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         textNewRecovered.setText(replacedData[2]); // Update : New Recovered TextViews
         textNewDeath.setText(replacedData[3]); // Update : New Death TextViews
         textTodayUpdate.setText(replacedData[4]); // Update : Today TextViews
+        textTotalCases.setText(replacedData[5]); // Update : Total Cases TextViews
+        textTotalRecovered.setText(replacedData[6]); // Update : Total Recovered TextViews
 
         progressDialog.dismiss();
     }
