@@ -9,6 +9,8 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
@@ -19,6 +21,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -50,6 +53,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static String[] receivedData = new String[7]; // Received Data From API
 
     private String TAG = "MainActivity : ";
+
+    private String versionName, newVersionName; // VersionName Info
+    private int versionCode, newVersionCode; // VersionCode Info
+    private String newVersionDownload;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -121,6 +128,34 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         requestQueue.add(jsonObjectRequest);
 
         Snackbar.make(view, getResources().getString(R.string.snackbar_text), Snackbar.LENGTH_LONG);
+
+        try {
+            checkNewVersionUpdate(MainActivity.this);
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void checkNewVersionUpdate(Context context) throws PackageManager.NameNotFoundException {
+        PackageInfo packageInfo = context.getPackageManager().getPackageInfo(getPackageName(), 0);
+        versionName = packageInfo.versionName;
+        versionCode = packageInfo.versionCode;
+        Log.i(TAG, "onResponse: " + newVersionDownload + newVersionName + newVersionCode);
+        if (!versionName.equals(newVersionName) || versionCode != newVersionCode) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(context);
+            builder.setTitle(getResources().getString(R.string.dialog_new_version_update_title))
+                    .setMessage(getResources().getString(R.string.dialog_new_version_update_message))
+                    .setPositiveButton(getResources().getString(R.string.dialog_new_version_update_button_update),
+                            (dialog, which) -> {
+                        dialog.dismiss();
+                                CustomTabsIntent.Builder chromeTabsBuilder = new CustomTabsIntent.Builder();
+                                CustomTabsIntent customTabsIntent = chromeTabsBuilder.build();
+                                customTabsIntent.launchUrl(MainActivity.this, Uri.parse(OFFICIAL_URL));
+                            })
+                    .setNegativeButton(getResources().getString(R.string.dialog_new_version_update_button_close),
+                            (dialog, which) -> dialog.dismiss());
+            builder.show();
+        }
     }
 
     @Override
