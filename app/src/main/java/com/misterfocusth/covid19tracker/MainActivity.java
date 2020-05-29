@@ -58,7 +58,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private String TAG = "MainActivity : ";
 
     private String versionName, versionCode, newVersionName, newVersionCode, downloadUrl;
-    VersionData versionData = new VersionData();
 
     // Firebase Realtime Database
     FirebaseDatabase database;
@@ -155,7 +154,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                getNewApplicationVersionUpdate(dataSnapshot);
+                getNewApplicationVersionUpdate(dataSnapshot, context);
             }
 
             @Override
@@ -163,35 +162,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             }
         });
+    }
 
-        if (!versionName.equals(newVersionName) || versionCode != newVersionCode) {
+    private void getNewApplicationVersionUpdate(DataSnapshot dataSnapshot, Context context) {
+        final String DATASNAPSHOT_CHILD = "versionInfo";
+        String[] newVersionInfo = new String[3];
+        for (DataSnapshot ds : dataSnapshot.getChildren()) {
+            VersionData versionData = new VersionData();
+            versionData.setVersionCode(ds.child(DATASNAPSHOT_CHILD).getValue(VersionData.class).getVersionCode());
+            versionData.setVersionName(ds.child(DATASNAPSHOT_CHILD).getValue(VersionData.class).getVersionName());
+            versionData.setDownloadUrl(ds.child(DATASNAPSHOT_CHILD).getValue(VersionData.class).getDownloadUrl());
+
+            newVersionInfo[0] = versionData.getVersionCode();
+            newVersionInfo[1] = versionData.getVersionName();
+            newVersionInfo[2] = versionData.getDownloadUrl();
+        }
+        if (!versionName.equals(newVersionInfo[1]) || !versionCode.equals(newVersionInfo[0])) {
             AlertDialog.Builder builder = new AlertDialog.Builder(context);
             builder.setTitle(getResources().getString(R.string.dialog_new_version_update_title))
                     .setMessage(getResources().getString(R.string.dialog_new_version_update_message))
                     .setPositiveButton(getResources().getString(R.string.dialog_new_version_update_button_update),
                             (dialog, which) -> {
-                        dialog.dismiss();
+                                dialog.dismiss();
                                 CustomTabsIntent.Builder chromeTabsBuilder = new CustomTabsIntent.Builder();
                                 CustomTabsIntent customTabsIntent = chromeTabsBuilder.build();
-                                customTabsIntent.launchUrl(MainActivity.this, Uri.parse(downloadUrl));
+                                customTabsIntent.launchUrl(MainActivity.this, Uri.parse(newVersionInfo[2]));
                             })
                     .setNegativeButton(getResources().getString(R.string.dialog_new_version_update_button_close),
                             (dialog, which) -> dialog.dismiss());
             builder.show();
-        }
-    }
-
-    private void getNewApplicationVersionUpdate(DataSnapshot dataSnapshot) {
-        for (DataSnapshot ds : dataSnapshot.getChildren()) {
-            versionData.setVersionCode(ds.child("versionInfo").getValue(VersionData.class).getVersionCode());
-            versionData.setVersionName(ds.child("versionInfo").getValue(VersionData.class).getVersionName());
-            versionData.setDownloadUrl(ds.child("versionInfo").getValue(VersionData.class).getDownloadUrl());
-
-            newVersionCode = versionData.getVersionCode();
-            newVersionName = versionData.getVersionName();
-            downloadUrl = versionData.getDownloadUrl();
-
-            Log.i(TAG, "onResponse: " + versionData.getDownloadUrl() + versionData.getVersionName() + versionData.getVersionCode());
         }
     }
 
