@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">COVID-19 TH Situation Tracker</string>
+    <string name="snackbar_text">" If the information is not updated, pull the screen down to update the information ..."</string>
+    <string name="dialog_no_internet_title">No Internet Connection</string>
+    <string name="dialog_no_internet_message">Unable to receive data Please connect to the internet.</string>
+    <string name="dialog_no_internet_button">Dismiss</string>
+    <string name="dialog_new_version_update_title">New Update Available</string>
+    <string name="dialog_new_version_update_message">The application has been updated. Do you want to update to the latest version?</string>
+    <string name="dialog_new_version_update_button_update">Update</string>
+    <string name="dialog_new_version_update_button_close">Dismiss</string>
+    <string name="dialog_loading_title">Fetching Data...</string>
+    <string name="dialog_loading_message">Fetching Data Please Wait</string>
+    <string name="box_header">"        Thailand COVID-19 Situation Update        "</string>
+    <string name="box_updatedDate">"         Last Update On : date"</string>
+    <string name="box_newcases">"             New Confirmed Cases       Increase  _  Cases (+ _)"</string>
+    <string name="box_recovered">"             New Remedied        Increase  _  Cases  (+ _)"</string>
+    <string name="box_death">"   The number of deaths  Increase  _  Cases (+ _)"</string>
+    <string name="box_total_cases">"   Total Confirmed Cases     Total  totalCases Cases (+ _)"</string>
+    <string name="box_total_recovered">"   Total Recovered     Total totalRecovered Cases (+ _)"</string>
+    <string name="box_today_update">"        : วันนี้ (date) ประเทศไทยมีผู้ติดเชื้อ COVID-19 รายใหม่จำนวน (newCase) คน จำนวนผู้รักษาหายวันนี้เพิ่มขึ้น (newRecovered) คน คงเหลือผู้รักษาตัวอยู่ในโรงพยาบาลจำนวน (Hospitalized) คน ผู้เสียชีวิตรายใหม่ วันนี้จำนวน (newDeath) คน   "</string>
+</resources>
