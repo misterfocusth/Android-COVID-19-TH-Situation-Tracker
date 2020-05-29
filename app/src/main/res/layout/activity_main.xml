@@ -5,6 +5,7 @@
     android:id="@+id/pullToRefresh"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:orientation="vertical"
     android:scrollbars="none">
 
     <ScrollView
@@ -201,6 +202,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/shape_box"
+                android:elevation="50dp"
                 android:gravity="center"
                 android:padding="6dp"
                 android:text="@string/box_today_update"
