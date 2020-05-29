@@ -1,5 +1,6 @@
 package com.misterfocusth.covid19tracker;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.browser.customtabs.CustomTabsIntent;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -21,18 +22,20 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.net.InetAddress;
 
 // Made By Focus Sila Pakdeewong (MisterFocusTH)
 // Thanks API & Data From : Open Government Data of Thailand and Ministry of Public Health (Thailand)
@@ -54,9 +57,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private String TAG = "MainActivity : ";
 
-    private String versionName, newVersionName; // VersionName Info
-    private int versionCode, newVersionCode; // VersionCode Info
-    private String newVersionDownload;
+    private String versionName, versionCode, newVersionName, newVersionCode, downloadUrl;
+    VersionData versionData = new VersionData();
+
+    // Firebase Realtime Database
+    FirebaseDatabase database;
+    DatabaseReference myRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,6 +91,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // UI Components - SwipeRefresLayout
         mSwipeRefreshLayout = findViewById(R.id.pullToRefresh);
         mSwipeRefreshLayout.setOnRefreshListener(MainActivity.this);
+
+        // Firebase Realtime Database
+        database = FirebaseDatabase.getInstance();
+        myRef = database.getReference();
 
         checkInternetConnection(MainActivity.this);
 
@@ -138,9 +148,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void checkNewVersionUpdate(Context context) throws PackageManager.NameNotFoundException {
         PackageInfo packageInfo = context.getPackageManager().getPackageInfo(getPackageName(), 0);
-        versionName = packageInfo.versionName;
-        versionCode = packageInfo.versionCode;
-        Log.i(TAG, "onResponse: " + newVersionDownload + newVersionName + newVersionCode);
+        versionName = packageInfo.versionName; // Current App Version Name
+        int intVersionCode = packageInfo.versionCode; // Current App Version Code
+        versionCode = String.valueOf(intVersionCode);
+
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                getNewApplicationVersionUpdate(dataSnapshot);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
         if (!versionName.equals(newVersionName) || versionCode != newVersionCode) {
             AlertDialog.Builder builder = new AlertDialog.Builder(context);
             builder.setTitle(getResources().getString(R.string.dialog_new_version_update_title))
@@ -150,11 +173,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         dialog.dismiss();
                                 CustomTabsIntent.Builder chromeTabsBuilder = new CustomTabsIntent.Builder();
                                 CustomTabsIntent customTabsIntent = chromeTabsBuilder.build();
-                                customTabsIntent.launchUrl(MainActivity.this, Uri.parse(OFFICIAL_URL));
+                                customTabsIntent.launchUrl(MainActivity.this, Uri.parse(downloadUrl));
                             })
                     .setNegativeButton(getResources().getString(R.string.dialog_new_version_update_button_close),
                             (dialog, which) -> dialog.dismiss());
             builder.show();
+        }
+    }
+
+    private void getNewApplicationVersionUpdate(DataSnapshot dataSnapshot) {
+        for (DataSnapshot ds : dataSnapshot.getChildren()) {
+            versionData.setVersionCode(ds.child("versionInfo").getValue(VersionData.class).getVersionCode());
+            versionData.setVersionName(ds.child("versionInfo").getValue(VersionData.class).getVersionName());
+            versionData.setDownloadUrl(ds.child("versionInfo").getValue(VersionData.class).getDownloadUrl());
+
+            newVersionCode = versionData.getVersionCode();
+            newVersionName = versionData.getVersionName();
+            downloadUrl = versionData.getDownloadUrl();
+
+            Log.i(TAG, "onResponse: " + versionData.getDownloadUrl() + versionData.getVersionName() + versionData.getVersionCode());
         }
     }
 
