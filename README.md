@@ -2,16 +2,16 @@
 [Android App] : COVID-19 TH Situation Tracker ติดตามสถานการณ์โควิท-19 ในประเทศไทยเเบบอัพเดทวันต่อวัน (ข้อมูลจากกรมควบคุมโรค กระทรวงสาธารณสุข เเละ สํานักงานพัฒนารัฐบาลดิจิทัล)
 
 # ดาวน์โหลด - Download It !
-ดาวน์โหลดเลย ! : (https://github.com/MisterFocusTH/Android-COVID-19-TH-Situation-Tracker/releases/download/1.1/com.misterfocusth.covid19tracker.apk)
+ดาวน์โหลดเลย ! : (https://github.com/MisterFocusTH/Android-COVID-19-TH-Situation-Tracker/releases/download/1.2/com.misterfocusth.covid19tracker.apk)
 
 # ความต้องการในการใช้งาน - Requirements
 - การเข้าถึงอินเตอร์เน็ต (Internet Access)
 - ระบบปฎิบัติการเเอนดรอยขั้นต่ำเวอร์ชั่น 7.0 (Minimum Android 7.0)
 
 # ภาพหน้าจอภายในเเอพ - Screenshots
-![Screenshot_1](https://firebasestorage.googleapis.com/v0/b/covid-19-th-situation-tracker.appspot.com/o/App_Screenshots%2F65598.jpg?alt=media&token=729e8baf-2acd-40d8-b65c-252103428945)
+![Screenshot_1](https://firebasestorage.googleapis.com/v0/b/covid-19-th-situation-tracker.appspot.com/o/App_Screenshots%2F66242.jpg?alt=media&token=df6d1627-40d2-4351-9530-f6a7d96eccdb)
 
-![Screenshot_2](https://firebasestorage.googleapis.com/v0/b/covid-19-th-situation-tracker.appspot.com/o/App_Screenshots%2F65599.jpg?alt=media&token=5b212bd0-07dc-4050-b0d8-0b924cf965bd)
+![Screenshot_2](https://firebasestorage.googleapis.com/v0/b/covid-19-th-situation-tracker.appspot.com/o/App_Screenshots%2F66241.jpg?alt=media&token=0e8bacf4-df30-4f7f-bf85-d8a78c0a4817)
 
 # การทดสอบเเละตรวจหาไวรัส - App Test & Virus Scan
 - Firebase Application Test Lab
@@ -25,7 +25,7 @@
 # ทดสอบความถูกต้อง & ความน่าเชื่อถือของข้อมูล - Test the accuracy and reliability of data
 - ข้อมูลภายในเเอพพลิเคชั่น
 
-![Screenshot_1](https://firebasestorage.googleapis.com/v0/b/covid-19-th-situation-tracker.appspot.com/o/App_Screenshots%2F65606.jpg?alt=media&token=f9f6ff9d-9ee7-458a-a294-da41faa2ca0c)
+![Screenshot_1](https://firebasestorage.googleapis.com/v0/b/covid-19-th-situation-tracker.appspot.com/o/App_Screenshots%2F66242.jpg?alt=media&token=df6d1627-40d2-4351-9530-f6a7d96eccdb)
 
 - ข้อมูลจากกรมควบคุมโรค กระทรวสาธารณสุข (https://covid19.ddc.moph.go.th/)
 
