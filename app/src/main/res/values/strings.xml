@@ -9,6 +9,9 @@
     <string name="dialog_no_internet_message">"ไม่สามารถรับข้อมูล กรุณาเชื่อมต่ออินเตอร์เน็ต"</string>
     <string name="dialog_no_internet_button">"ปิด"</string>
 
+    <string name="dialog_loading_title">"กำลังเรียกข้อมูล..."</string>
+    <string name="dialog_loading_message">"กำลังเรียกข้อมูล โปรดรอสักครู่"</string>
+
     <string name="box_header">"        อัพเดทสถานการณ์ COVID-19 ในประเทศไทย        "</string>
 
     <string name="box_updatedDate">"         ข้อมูลอัพเดทเมื่อวันที่ : date"</string>

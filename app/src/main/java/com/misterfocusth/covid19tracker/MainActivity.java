@@ -5,6 +5,7 @@ import androidx.browser.customtabs.CustomTabsIntent;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button btnReportIssues , btnOpenBrowser; // Button UI Components
     private SwipeRefreshLayout mSwipeRefreshLayout; // SwipeRefreshLayout UI Component
     private View view; // View UI Component
+    private ProgressDialog progressDialog; // ProgressDialog
 
     private static final String API_URL = "https://covid19.th-stat.com/api/open/today";
     private static final String OFFICIAL_URL = "https://covid19.ddc.moph.go.th/";
@@ -76,6 +78,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mSwipeRefreshLayout.setOnRefreshListener(MainActivity.this);
 
         checkInternetConnection(MainActivity.this);
+
+        progressDialog = new ProgressDialog(MainActivity.this);
+        progressDialog.setTitle(getResources().getString(R.string.dialog_loading_title));
+        progressDialog.setMessage(getResources().getString(R.string.dialog_loading_message));
+        progressDialog.setCancelable(false);
+        progressDialog.show();
 
         //Request Data From API_URL
         RequestQueue requestQueue = Volley.newRequestQueue(MainActivity.this);
@@ -179,6 +187,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         textNewRecovered.setText(replacedData[2]); // Update : New Recovered TextViews
         textNewDeath.setText(replacedData[3]); // Update : New Death TextViews
         textTodayUpdate.setText(replacedData[4]); // Update : Today TextViews
+
+        progressDialog.dismiss();
     }
 
     private void checkInternetConnection(Context context) {
