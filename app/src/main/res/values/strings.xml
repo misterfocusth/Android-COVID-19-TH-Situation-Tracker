@@ -38,4 +38,7 @@
 
     <string name="box_footer_own">"Made By : Focus Sila Pakdeewong (MisterFocusTH)"</string>
     <string name="box_footer_thanks">"ขอบคุณข้อมูลจาก : กรมควบคุมโรค กระทรวงสาธารณสุข\nเเละ สํานักงานพัฒนารัฐบาลดิจิทัล"</string>
+    <string name="bottom_menu_home">หน้าเเรก</string>
+    <string name="bottom_menu_explore">สำรวจ</string>
+    <string name="bottom_menu_info">ข้อมูลเพิ่มเติม</string>
 </resources>
