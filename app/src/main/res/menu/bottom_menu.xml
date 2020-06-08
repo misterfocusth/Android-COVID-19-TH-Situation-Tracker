@@ -7,6 +7,11 @@
         android:icon="@drawable/ic_baseline_home_24"
         app:cnb_iconColor="@color/colorHome" />
 
+    <item android:title="@string/bottom_menu_warning"
+        android:id="@+id/bottomNav_warning"
+        android:icon="@drawable/ic_baseline_warning_24"
+        app:cnb_iconColor="#FF6D00" />
+
     <item android:title="@string/bottom_menu_explore"
         android:id="@+id/bottomNav_explore"
         android:icon="@drawable/ic_baseline_explore_24"

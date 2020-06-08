@@ -49,19 +49,12 @@ class MainActivity : AppCompatActivity() {
             var selectedFragment: Fragment? = null
             if (id.equals(R.id.bottomNav_home)) {
                 selectedFragment = HomeFragment()
-                if (actionBar != null) {
-                    actionBar.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.colorHome)))
-                };
+            } else if (id.equals(R.id.bottomNav_warning)) {
+                selectedFragment = WarningAndPreventFragment()
             } else if (id.equals(R.id.bottomNav_explore)) {
                 selectedFragment = ExploreFragment()
-                if (actionBar != null) {
-                    actionBar.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.colorExplore)))
-                };
             } else if (id.equals(R.id.bottomNav_info)) {
                 selectedFragment = ExploreFragment()
-                if (actionBar != null) {
-                    actionBar.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.colorInfo)))
-                };
             }
             if (selectedFragment != null) {
                 supportFragmentManager.beginTransaction().replace(R.id.fragment_container, selectedFragment).commit()
