@@ -62,10 +62,10 @@ class HomeFragment : Fragment(), View.OnClickListener {
         textTotalRecovered = rootView.findViewById(R.id.textViewTotalRecovered)
 
         // UI Components - Buttons
-        btnReportIssues = rootView.findViewById(R.id.btn_reportIssue)
-        btnReportIssues.setOnClickListener(this)
-        btnOpenBrowser = rootView.findViewById(R.id.btn_viewOnBrowser)
-        btnOpenBrowser.setOnClickListener(this)
+//        btnReportIssues = rootView.findViewById(R.id.btn_reportIssue)
+//        btnReportIssues.setOnClickListener(this)
+//        btnOpenBrowser = rootView.findViewById(R.id.btn_viewOnBrowser)
+//        btnOpenBrowser.setOnClickListener(this)
 
         progressDialog = ProgressDialog(context)
         progressDialog.setTitle(resources.getString(R.string.dialog_loading_title))
@@ -106,20 +106,20 @@ class HomeFragment : Fragment(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-        if (v != null) {
-            if (v.id == R.id.btn_reportIssue) {
-                val intent = Intent(Intent.ACTION_SENDTO)
-                intent.type = "text/plain"
-                intent.putExtra(Intent.EXTRA_EMAIL, "Silapakdeewong2546.3@gmail.com")
-                intent.putExtra(Intent.EXTRA_SUBJECT, "Report_Issues - COVID-19 TH Situation Tracker (รายงานข้อผิดพลาด)")
-                intent.putExtra(Intent.EXTRA_TEXT, "Explain Your Problem Here ! - อธิบายปัญหาของคุณมาเลย")
-                startActivity(Intent.createChooser(intent, "กรุณาเลือกเเอพพลิเคชั่นเพื่อดำเนินการต่อ"))
-            } else if (v.id == R.id.btn_viewOnBrowser) {// Open Browser Link WIth ChromeCustomTabs
-                    val builder = CustomTabsIntent.Builder()
-                    val customTabsIntent = builder.build()
-                    customTabsIntent.launchUrl(v.context, Uri.parse(OFFICIAL_URL))
-                }
-            }
+//        if (v != null) {
+//            if (v.id == R.id.btn_reportIssue) {
+//                val intent = Intent(Intent.ACTION_SENDTO)
+//                intent.type = "text/plain"
+//                intent.putExtra(Intent.EXTRA_EMAIL, "Silapakdeewong2546.3@gmail.com")
+//                intent.putExtra(Intent.EXTRA_SUBJECT, "Report_Issues - COVID-19 TH Situation Tracker (รายงานข้อผิดพลาด)")
+//                intent.putExtra(Intent.EXTRA_TEXT, "Explain Your Problem Here ! - อธิบายปัญหาของคุณมาเลย")
+//                startActivity(Intent.createChooser(intent, "กรุณาเลือกเเอพพลิเคชั่นเพื่อดำเนินการต่อ"))
+//            } else if (v.id == R.id.btn_viewOnBrowser) {// Open Browser Link WIth ChromeCustomTabs
+//                    val builder = CustomTabsIntent.Builder()
+//                    val customTabsIntent = builder.build()
+//                    customTabsIntent.launchUrl(v.context, Uri.parse(OFFICIAL_URL))
+//                }
+//            }
         }
 
     private fun replaceData() {
@@ -135,9 +135,9 @@ class HomeFragment : Fragment(), View.OnClickListener {
         replacedData[2] = textViewData[2]!!.replace("_".toRegex(), receivedData[2]!!) // Update Recovered
         replacedData[3] = textViewData[3]!!.replace("_".toRegex(), receivedData[3]!!) // Update NewDeath
         // Replaced Data 4 : Tooday Update Box Update Below Loop !
-        replacedData[5] = textViewData[5]!!.replace("totalCases".toRegex(), receivedData[5]!!) // Update Total Cases
+        replacedData[5] = textViewData[5]!!.replace("TC".toRegex(), receivedData[5]!!) // Update Total Cases
         replacedData[5] = replacedData[5]!!.replace("_".toRegex(), receivedData[1]!!) // Update New Case In Total Cases Box
-        replacedData[6] = textViewData[6]!!.replace("totalRecovered".toRegex(), receivedData[6]!!) // Update Total Recovered
+        replacedData[6] = textViewData[6]!!.replace("TR".toRegex(), receivedData[6]!!) // Update Total Recovered
         replacedData[6] = replacedData[6]!!.replace("_".toRegex(), receivedData[2]!!) // Update New Recovered In Total Recovered Box
         var replacedString = ""
         var i = 0
