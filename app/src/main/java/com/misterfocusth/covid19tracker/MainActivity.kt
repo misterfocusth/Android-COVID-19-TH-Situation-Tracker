@@ -1,22 +1,17 @@
 package com.misterfocusth.covid19tracker
 
-import android.app.ActionBar
 import android.app.AlertDialog
 import android.content.Context
 import android.content.DialogInterface
 import android.content.pm.PackageManager
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.net.ConnectivityManager
 import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.browser.customtabs.CustomTabsIntent
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.google.firebase.database.*
 import com.ismaeldivita.chipnavigation.ChipNavigationBar
-import com.misterfocusth.covid19tracker.MainActivity
 
 // Made By Focus Sila Pakdeewong (MisterFocusTH)
 // Thanks API & Data From : Open Government Data of Thailand and Ministry of Public Health (Thailand)
@@ -26,34 +21,33 @@ class MainActivity : AppCompatActivity() {
     private lateinit var bottomNavigation: ChipNavigationBar
 
     // Version Info
-    lateinit var versionName: String
-    lateinit var versionCode: String
-    lateinit var newVersionName: String
-    lateinit var newVersionCode: String
-    lateinit var downloadUrl: String
+    private lateinit var versionName: String
+    private lateinit var versionCode: String
 
     // Firebase Realtime Database
-    var database: FirebaseDatabase? = null
-    var myRef: DatabaseReference? = null
+    private var database: FirebaseDatabase? = null
+    private var myRef: DatabaseReference? = null
+
+    companion object {
+        private val DATASNAPSHOT_CHILD = "versionInfo"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        var actionBar : androidx.appcompat.app.ActionBar? = supportActionBar
 
         // UI Component - Navigation Bar
         bottomNavigation = findViewById(R.id.bottomNavigationBar)
         bottomNavigation.setItemSelected(R.id.bottomNav_home)
         bottomNavigation.setOnItemSelectedListener { id ->
             var selectedFragment: Fragment? = null
-            if (id.equals(R.id.bottomNav_home)) {
+            if (id == R.id.bottomNav_home) {
                 selectedFragment = HomeFragment()
-            } else if (id.equals(R.id.bottomNav_warning)) {
+            } else if (id == R.id.bottomNav_warning) {
                 selectedFragment = WarningAndPreventFragment()
-            } else if (id.equals(R.id.bottomNav_explore)) {
+            } else if (id == R.id.bottomNav_explore) {
                 selectedFragment = ExploreFragment()
-            } else if (id.equals(R.id.bottomNav_info)) {
+            } else if (id == R.id.bottomNav_info) {
                 selectedFragment = ExploreFragment()
             }
             if (selectedFragment != null) {
@@ -95,7 +89,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getNewApplicationVersionUpdate(dataSnapshot: DataSnapshot, context: Context) {
-        val DATASNAPSHOT_CHILD = "versionInfo"
         val newVersionInfo = arrayOfNulls<String>(3)
         for (ds in dataSnapshot.children) {
             val versionData = VersionData()
@@ -111,14 +104,14 @@ class MainActivity : AppCompatActivity() {
             builder.setTitle(resources.getString(R.string.dialog_new_version_update_title))
                     .setMessage(resources.getString(R.string.dialog_new_version_update_message))
                     .setPositiveButton(resources.getString(R.string.dialog_new_version_update_button_update)
-                    ) { dialog: DialogInterface, which: Int ->
+                    ) { dialog: DialogInterface, _: Int ->
                         dialog.dismiss()
                         val chromeTabsBuilder = CustomTabsIntent.Builder()
                         val customTabsIntent = chromeTabsBuilder.build()
                         customTabsIntent.launchUrl(this@MainActivity, Uri.parse(newVersionInfo[2]))
                     }
                     .setNegativeButton(resources.getString(R.string.dialog_new_version_update_button_close)
-                    ) { dialog: DialogInterface, which: Int -> dialog.dismiss() }
+                    ) { dialog: DialogInterface, _: Int -> dialog.dismiss() }
             builder.show()
         }
     }
@@ -128,7 +121,7 @@ class MainActivity : AppCompatActivity() {
             val builder = AlertDialog.Builder(context)
             builder.setTitle(resources.getString(R.string.dialog_no_internet_title))
                     .setMessage(resources.getString(R.string.dialog_no_internet_message))
-                    .setPositiveButton(resources.getString(R.string.dialog_no_internet_button)) { dialog, which ->
+                    .setPositiveButton(resources.getString(R.string.dialog_no_internet_button)) { dialog, _ ->
                         dialog.dismiss()
                         finish()
                     }
@@ -137,17 +130,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private val isInternetAvailable: Boolean
-        private get() {
+        get() {
             val connectivityManager = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-            if (connectivityManager != null) {
-                val activeNetworkInfo = connectivityManager.activeNetworkInfo
-                if (activeNetworkInfo != null) {
-                    return if (activeNetworkInfo.type == ConnectivityManager.TYPE_WIFI) {
-                        true
-                    } else activeNetworkInfo.type == ConnectivityManager.TYPE_MOBILE
-                }
-            } else {
-                return false
+            val activeNetworkInfo = connectivityManager.activeNetworkInfo
+            if (activeNetworkInfo != null) {
+                return if (activeNetworkInfo.type == ConnectivityManager.TYPE_WIFI) {
+                    true
+                } else activeNetworkInfo.type == ConnectivityManager.TYPE_MOBILE
             }
             return false
         }
