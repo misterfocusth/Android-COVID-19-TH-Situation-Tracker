@@ -2,7 +2,6 @@ package com.misterfocusth.covid19tracker;
 
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.graphics.Movie;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -20,11 +19,8 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
 import com.misterfocusth.covid19tracker.adapter.MyRecyclerViewAdapter;
 import com.misterfocusth.covid19tracker.model.HistoryDataModel;
 
@@ -36,7 +32,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class ExploreFragment extends Fragment {
+public class TimelineFragment extends Fragment {
 
     private RecyclerView recyclerView;
 
@@ -53,7 +49,7 @@ public class ExploreFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_explore, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_timeline, container, false);
 
         recyclerView = rootView.findViewById(R.id.recyclerView);
 

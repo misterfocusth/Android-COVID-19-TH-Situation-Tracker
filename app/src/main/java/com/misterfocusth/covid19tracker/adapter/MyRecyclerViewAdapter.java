@@ -52,7 +52,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     @Override
     public CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(context);
-        View view = layoutInflater.inflate(R.layout.history_data_list, parent, false);
+        View view = layoutInflater.inflate(R.layout.timeline_data_list, parent, false);
         return new CustomViewHolder(view);
     }
 
