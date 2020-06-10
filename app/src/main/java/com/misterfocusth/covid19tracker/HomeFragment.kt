@@ -22,6 +22,7 @@ import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
+import com.misterfocusth.covid19tracker.model.HistoryDataModel
 import org.json.JSONException
 import org.json.JSONObject
 

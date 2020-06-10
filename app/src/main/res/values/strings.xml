@@ -11,6 +11,15 @@
     <string name="warning_header_3">ลองทำเเบบสำรวจด้านล่าง หากอาการยังไม่ดีขึ้น\nควรรีบไปพบเเพทย์เพื่อทำการตรวจโรคอย่างละเอียด</string>
     <string name="warning_btn_check">ทำเเบบประเมินความเสี่ยงเบื้องต้น</string>
 
+    <string name="explore_day">Day : </string>
+    <string name="explore_date">วันที่ : </string>
+    <string name="explore_new_confirmed">ผู้ติดเชื้อรายใหม่ : </string>
+    <string name="explore_new_recovered">รักษาหายเพิ่ม : </string>
+    <string name="explore_new_deaths">เสียชีวิตเพิ่ม : </string>
+    <string name="explore_confirmed">ทั้งหมด : </string>
+    <string name="explore_recovered">ทั้งหมด : </string>
+    <string name="explore_deaths">ทั้งหมด : </string>
+
     <string name="snackbar_text">"หากข้อมูลไม่อัพเดท ดึงหน้าจอลงเพื่ออัพเดทข้อมูล..."</string>
 
     <string name="dialog_no_internet_title">"ไม่มีอินเตอร์เน็ต"</string>
@@ -48,7 +57,7 @@
     <string name="box_footer_thanks">"ข้อมูลจาก : กรมควบคุมโรค กระทรวงสาธารณสุข\nเเละ สํานักงานพัฒนารัฐบาลดิจิทัล"</string>
 
     <string name="bottom_menu_home">หน้าเเรก</string>
-    <string name="bottom_menu_explore">สำรวจ</string>
+    <string name="bottom_menu_explore">ไทม์ไลน์ผู้ติดเชื้อในประเทศ</string>
     <string name="bottom_menu_warning">คำเเนะนำเเละการป้องกัน</string>
     <string name="bottom_menu_info">ข้อมูลเพิ่มเติม</string>
 
