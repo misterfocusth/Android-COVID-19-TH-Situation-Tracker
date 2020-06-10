@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
             } else if (id == R.id.bottomNav_explore) {
                 selectedFragment = TimelineFragment()
             } else if (id == R.id.bottomNav_info) {
-                selectedFragment = TimelineFragment()
+                selectedFragment = InfoFragment()
             }
             if (selectedFragment != null) {
                 supportFragmentManager.beginTransaction().replace(R.id.fragment_container, selectedFragment).commit()
