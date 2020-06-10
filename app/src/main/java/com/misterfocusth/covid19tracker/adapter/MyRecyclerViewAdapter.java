@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.misterfocusth.covid19tracker.R;
 import com.misterfocusth.covid19tracker.model.HistoryDataModel;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.CustomViewHolder> {

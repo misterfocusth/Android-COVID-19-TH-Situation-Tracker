@@ -23,10 +23,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/shape_explore_day"
-            android:elevation="10dp"
             android:padding="10dp"
             android:text="@string/explore_day"
             android:textAlignment="textStart"
+            android:textColor="#FFFFFF"
             android:textSize="15sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
@@ -47,7 +47,7 @@
             android:id="@+id/textViewHistoryNewConfirmed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="30dp"
             android:layout_marginTop="20dp"
             android:text="@string/explore_new_confirmed"
             android:textStyle="bold"
@@ -60,20 +60,18 @@
             android:id="@+id/textViewHistoryNewRecovered"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:text="@string/explore_new_recovered"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textViewHistoryNewConfirmed"
             app:layout_constraintTop_toBottomOf="@+id/textViewHistoryNewConfirmed" />
 
         <TextView
             android:id="@+id/textViewHistoryNewDeaths"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:text="@string/explore_new_deaths"
@@ -81,14 +79,14 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textViewHistoryNewRecovered"
             app:layout_constraintTop_toBottomOf="@+id/textViewHistoryNewRecovered" />
 
         <TextView
             android:id="@+id/textViewHistoryConfirmed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="50dp"
             android:layout_marginTop="20dp"
             android:text="@string/explore_confirmed"
             android:textStyle="bold"
@@ -101,26 +99,24 @@
             android:id="@+id/textViewHistoryRecovered"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:text="@string/explore_recovered"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/textViewHistoryNewRecovered"
+            app:layout_constraintStart_toStartOf="@+id/textViewHistoryConfirmed"
             app:layout_constraintTop_toBottomOf="@+id/textViewHistoryConfirmed" />
 
         <TextView
             android:id="@+id/textViewHistoryDeaths"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:text="@string/explore_deaths"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/textViewHistoryNewDeaths"
+            app:layout_constraintStart_toStartOf="@+id/textViewHistoryRecovered"
             app:layout_constraintTop_toBottomOf="@+id/textViewHistoryRecovered" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 

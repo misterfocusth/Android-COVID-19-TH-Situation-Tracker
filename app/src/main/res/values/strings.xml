@@ -16,9 +16,13 @@
     <string name="explore_new_confirmed">ผู้ติดเชื้อรายใหม่ : </string>
     <string name="explore_new_recovered">รักษาหายเพิ่ม : </string>
     <string name="explore_new_deaths">เสียชีวิตเพิ่ม : </string>
-    <string name="explore_confirmed">ทั้งหมด : </string>
-    <string name="explore_recovered">ทั้งหมด : </string>
-    <string name="explore_deaths">ทั้งหมด : </string>
+    <string name="explore_confirmed">ติดเชื้อทั้งหมด : </string>
+    <string name="explore_recovered">รักษาหายั้งหมด : </string>
+    <string name="explore_deaths">เสียชีวิตทั้งหมด : </string>
+
+    <string name="explore_header">ไทม์ไลน์ผู้ติดเชื้อภายในประเทศ</string>
+    <string name="explore_body">ไทม์ไลน์เเสดงข้อมูลผู้ติดเชื้อภายในประเทศไทย\nเริ่มตั้งแต่วันที่ 01 มกราคม 2563 (01/01/2020)</string>
+    <string name="explore_body_info">ข้อมูลจาก : กรมควบคุมโรค กระทรวงสาธารณสุข</string>
 
     <string name="snackbar_text">"หากข้อมูลไม่อัพเดท ดึงหน้าจอลงเพื่ออัพเดทข้อมูล..."</string>
 
