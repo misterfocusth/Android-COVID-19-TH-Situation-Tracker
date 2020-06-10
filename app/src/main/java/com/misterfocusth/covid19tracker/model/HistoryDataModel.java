@@ -82,23 +82,3 @@ public class HistoryDataModel {
         this.deaths = deaths;
     }
 }
-
-//data class HistoryDataModel(
-//        val day: String,
-//        val date: String,
-//        val newConfirmed: String,
-//        val newRecovered: String,
-//        val newDeaths: String,
-//        val confirmed: String,
-//        val recovered: String,
-//        val deaths: String
-//        ) {
-//        }
-//
-////@SerializedName("Date") val date: String,
-////@SerializedName("NewConfirmed") val newConfirmed: String,
-////@SerializedName("NewRecovered") val newRecovered: String,
-////@SerializedName("NewDeaths") val newDeaths: String,
-////@SerializedName("Confirmed") val confirmed: String,
-////@SerializedName("Recovered") val recovered: String,
-////@SerializedName("Deaths") val deaths: String

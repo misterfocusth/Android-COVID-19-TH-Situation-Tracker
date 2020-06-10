@@ -62,14 +62,14 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
         HistoryDataModel dataModel = dataList.get(position);
         String  textDay, textDate, textNewConfirmed, textNewRecovered, textNewDeaths, textConfirmed, textRecovered, textDeaths;
 
-        textDay =  res.getString(R.string.explore_day) + " " + dataModel.getDay();
-        textDate = res.getString(R.string.explore_date) + " " + dataModel.getDate();
-        textNewConfirmed = res.getString(R.string.explore_new_confirmed) + " " + dataModel.getNewConfirmed();
-        textNewRecovered = res.getString(R.string.explore_new_recovered) + " " + dataModel.getNewRecovered();
-        textNewDeaths = res.getString(R.string.explore_new_deaths) + " " + dataModel.getNewDeaths();
-        textConfirmed = res.getString(R.string.explore_confirmed) + " " + dataModel.getConfirmed();
-        textRecovered = res.getString(R.string.explore_recovered) + " " + dataModel.getRecovered();
-        textDeaths = res.getString(R.string.explore_deaths) + " " + dataModel.getDeaths();
+        textDay =  res.getString(R.string.timeline_day) + " " + dataModel.getDay();
+        textDate = res.getString(R.string.timeline_date) + " " + dataModel.getDate();
+        textNewConfirmed = res.getString(R.string.timeline_new_confirmed) + " " + dataModel.getNewConfirmed();
+        textNewRecovered = res.getString(R.string.timeline_new_recovered) + " " + dataModel.getNewRecovered();
+        textNewDeaths = res.getString(R.string.timeline_new_deaths) + " " + dataModel.getNewDeaths();
+        textConfirmed = res.getString(R.string.timeline_confirmed) + " " + dataModel.getConfirmed();
+        textRecovered = res.getString(R.string.timeline_recovered) + " " + dataModel.getRecovered();
+        textDeaths = res.getString(R.string.timeline_deaths) + " " + dataModel.getDeaths();
 
         holder.textDay.setText(textDay);
         holder.textDate.setText(textDate);
