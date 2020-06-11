@@ -1,17 +1,29 @@
 # Android-COVID-19-TH-Situation-Tracker
-[Android App] : COVID-19 TH Situation Tracker ติดตามสถานการณ์โควิท-19 ในประเทศไทยเเบบอัพเดทวันต่อวัน (ข้อมูลจากกรมควบคุมโรค กระทรวงสาธารณสุข เเละ สํานักงานพัฒนารัฐบาลดิจิทัล)
+[Android App] : COVID-19 TH Situation Tracker ติดตามสถานการณ์โควิท-19 ในประเทศไทยเเบบอัพเดทวันต่อวัน (ข้อมูลจากกรมควบคุมโรค กระทรวงสาธารณสุข เเละ สํานักงานพัฒนารัฐบาลดิจิทัล) เเอพพลิเคชั่น <b>COVID-19 TH Situation Tracker</b> จัดทำขึ้นเพื่อติดตาม รายงานสถานการณ์ เเละเเสดงผลข้อมูล ข้อมูลเเละรายงานทั้งหมด มาจาก Open API ของ กรมควบคุมโรค กระทรวงสาธารณสุข ซึ่งจัดทำขึ้นเพื่อให้นักพัฒนาสามารถดึงเอาข้อมูล รายงานสถานการณ์ประจำวันรวมถึง ข้อมูลต่างๆที่ทางกรมควบคุมโรคจัดทำขึ้น มาจัดการเเละเเสดงผลในเเอพพลิเคชั่นของตัวเอง
 
 # ดาวน์โหลด - Download It !
-ดาวน์โหลดเลย ! : (https://github.com/MisterFocusTH/Android-COVID-19-TH-Situation-Tracker/releases/download/1.2/com.misterfocusth.covid19tracker.apk)
+ดาวน์โหลดเลย ! : (https://firebasestorage.googleapis.com/v0/b/covid-19-th-situation-tracker.appspot.com/o/App_Screenshots%2FVersion%201.3%2Fcom.misterfocusth.covid19tracker.apk?alt=media&token=f537f125-55b2-4f46-90d4-5d17088d7afa)
 
 # ความต้องการในการใช้งาน - Requirements
 - การเข้าถึงอินเตอร์เน็ต (Internet Access)
 - ระบบปฎิบัติการเเอนดรอยขั้นต่ำเวอร์ชั่น 7.0 (Minimum Android 7.0)
 
 # ภาพหน้าจอภายในเเอพ - Screenshots
-![Screenshot_1](https://firebasestorage.googleapis.com/v0/b/covid-19-th-situation-tracker.appspot.com/o/App_Screenshots%2F66242.jpg?alt=media&token=df6d1627-40d2-4351-9530-f6a7d96eccdb)
 
-![Screenshot_2](https://firebasestorage.googleapis.com/v0/b/covid-19-th-situation-tracker.appspot.com/o/App_Screenshots%2F66241.jpg?alt=media&token=0e8bacf4-df30-4f7f-bf85-d8a78c0a4817)
+- หน้าเเรก เเสดงข้อมูลสรุปประจำวัน
+![Screenshot_1](https://firebasestorage.googleapis.com/v0/b/covid-19-th-situation-tracker.appspot.com/o/App_Screenshots%2FVersion%201.3%2FScreenshot_20200611_183715.jpg?alt=media&token=2f7a5a26-5766-4c52-a770-34c777106d7d)
+
+- ข้อควรระวัง วิธีปฎิบัติตัว เเละเเบบประเมินความเสี่ยง
+![Screenshot_2](https://firebasestorage.googleapis.com/v0/b/covid-19-th-situation-tracker.appspot.com/o/App_Screenshots%2FVersion%201.3%2FScreenshot_20200611_183731.jpg?alt=media&token=4f0ff6a4-4069-4a22-9728-ed801e42721f)
+
+- เเบบประเมินความเสี่ยงจาก กรมควบคุมโรคกระทรวง สาธารณสุข
+![Screenshot_3](https://firebasestorage.googleapis.com/v0/b/covid-19-th-situation-tracker.appspot.com/o/App_Screenshots%2FVersion%201.3%2FScreenshot_20200611_183747.jpg?alt=media&token=863acc83-c302-4f12-88c3-f965ce63fd42)
+
+- ไทม์ไลน์เเสดงผู้ติดเชื่อในเเต่ละวันในประเทศไทย ตั้งเเต่วันที่ 1 มกราคม 2563
+![Screenshot_4](https://firebasestorage.googleapis.com/v0/b/covid-19-th-situation-tracker.appspot.com/o/App_Screenshots%2FVersion%201.3%2FScreenshot_20200611_183756.jpg?alt=media&token=48c4f8e7-e70f-475a-bd9f-fed6193a19cd)
+
+- ข้อมูลเเอพพลิเคชั่น
+![Screenshot_5](https://firebasestorage.googleapis.com/v0/b/covid-19-th-situation-tracker.appspot.com/o/App_Screenshots%2FVersion%201.3%2FScreenshot_20200611_183806.jpg?alt=media&token=f41b55e5-f484-4a3b-b52c-7bd12db5f344)
 
 # การทดสอบเเละตรวจหาไวรัส - App Test & Virus Scan
 - Firebase Application Test Lab
@@ -25,11 +37,11 @@
 # ทดสอบความถูกต้อง & ความน่าเชื่อถือของข้อมูล - Test the accuracy and reliability of data
 - ข้อมูลภายในเเอพพลิเคชั่น
 
-![Screenshot_1](https://firebasestorage.googleapis.com/v0/b/covid-19-th-situation-tracker.appspot.com/o/App_Screenshots%2F66242.jpg?alt=media&token=df6d1627-40d2-4351-9530-f6a7d96eccdb)
+![Screenshot_1](https://firebasestorage.googleapis.com/v0/b/covid-19-th-situation-tracker.appspot.com/o/App_Screenshots%2FVersion%201.3%2FScreenshot_20200611_183220.jpg?alt=media&token=143262df-b746-4b48-aaef-3e85d030756f)
 
 - ข้อมูลจากกรมควบคุมโรค กระทรวสาธารณสุข (https://covid19.ddc.moph.go.th/)
 
-![Screenshot_2](https://firebasestorage.googleapis.com/v0/b/covid-19-th-situation-tracker.appspot.com/o/App_Screenshots%2F1.PNG?alt=media&token=07b7cf2b-ed19-4955-97ab-2a0939f7bd67)
+![Screenshot_2](https://firebasestorage.googleapis.com/v0/b/covid-19-th-situation-tracker.appspot.com/o/App_Screenshots%2FVersion%201.3%2FAnnotation%202020-06-11%20184145.png?alt=media&token=8f742e6b-fe81-4e62-9601-3d5a3bc07b44)
 
 # ขอบคุณข้อมูลจาก - Data Source From
 - กรมควบคุมโรค กระทรวงสาธารณสุข (https://covid19.ddc.moph.go.th/)
