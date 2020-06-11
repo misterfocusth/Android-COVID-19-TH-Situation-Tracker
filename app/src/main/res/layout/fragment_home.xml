@@ -107,7 +107,7 @@
 
             <TextView
                 android:id="@+id/textView_death"
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:background="@drawable/shape_death_box"
@@ -127,7 +127,7 @@
 
             <TextView
                 android:id="@+id/textViewTotalCases"
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="30dp"
@@ -147,7 +147,7 @@
 
             <TextView
                 android:id="@+id/textViewTotalRecovered"
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="15dp"
                 android:background="@drawable/shape_box_total_recovered"

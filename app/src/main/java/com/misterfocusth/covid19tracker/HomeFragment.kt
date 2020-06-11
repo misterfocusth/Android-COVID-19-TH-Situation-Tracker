@@ -47,9 +47,9 @@ class HomeFragment : Fragment(), View.OnClickListener {
         private lateinit var btnRefresh: ImageView
         private const val API_URL = "https://covid19.th-stat.com/api/open/today"
         private const val OFFICIAL_URL = "https://covid19.ddc.moph.go.th/"
-        var replacedData = arrayOfNulls<String>(7) // Received Data + TextViews Text
+        var replacedData = arrayOfNulls<String>(8) // Received Data + TextViews Text
         var textViewData = arrayOfNulls<String>(7) // Original TextViews Text
-        var receivedData = arrayOfNulls<String>(7) // Received Data From API
+        var receivedData = arrayOfNulls<String>(8) // Received Data From API
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -122,6 +122,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
                         receivedData[4] = jsonObject.getString("Hospitalized") // Get Total Hospitalized
                         receivedData[5] = jsonObject.getString("Confirmed") // GET : Total Confirmed
                         receivedData[6] = jsonObject.getString("Recovered") // GET : Total Recovered
+                        receivedData[7] = jsonObject.getString("Deaths") // GET : Total Deaths
                         Log.i(TAG, "onCreateView: " + receivedData.toString())
                         replaceData() // Replace Received Data To TextViews
                         updateTextView() // Update Text On TextViews
@@ -147,6 +148,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
         replacedData[1] = textViewData[1]!!.replace("_".toRegex(), receivedData[1]!!) // Update NewCases
         replacedData[2] = textViewData[2]!!.replace("_".toRegex(), receivedData[2]!!) // Update Recovered
         replacedData[3] = textViewData[3]!!.replace("_".toRegex(), receivedData[3]!!) // Update NewDeath
+        replacedData[3] = replacedData[3]!!.replace("TD".toRegex(), receivedData[7]!!) // Update Total Deaths
         // Replaced Data 4 : Tooday Update Box Update Below Loop !
         replacedData[5] = textViewData[5]!!.replace("TC".toRegex(), receivedData[5]!!) // Update Total Cases
         replacedData[5] = replacedData[5]!!.replace("_".toRegex(), receivedData[1]!!) // Update New Case In Total Cases Box

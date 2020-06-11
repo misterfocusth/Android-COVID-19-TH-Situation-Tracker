@@ -41,11 +41,11 @@
     <string name="box_header">"        อัพเดทสถานการณ์ COVID-19 ในประเทศไทย        "</string>
 
     <string name="box_updatedDate">"       ข้อมูลอัพเดทเมื่อวันที่ : date  "</string>
-    <string name="box_newcases">"จำนวนผู้ติดเชื้อรายใหม่\n\nเพิ่มขึ้น _ คน (+ _)"</string>
-    <string name="box_recovered">"จำนวนผู้รักษาหายเเล้ว\n\nเพิ่มขึ้น _ คน (+ _)"</string>
-    <string name="box_death">"เสียชีวิตวันนี้\n\n+ _ คน"</string>
-    <string name="box_total_cases">"ติดเชื้อสะสม\n\nTC คน (+ _)"</string>
-    <string name="box_total_recovered">"รักษาหายเเล้ว\n\nTR คน (+ _)"</string>
+    <string name="box_newcases">"ผู้ติดเชื้อรายใหม่วันนี้\n\nเพิ่มขึ้น _ คน (+ _)"</string>
+    <string name="box_recovered">"ผู้รักษาหายรายใหม่วันนี้\n\nเพิ่มขึ้น _ คน (+ _)"</string>
+    <string name="box_death">"เสียชีวิต\n\nTD คน\n\nวันนี้ : (+ _)"</string>
+    <string name="box_total_cases">"ติดเชื้อสะสม\n\nTC คน\n\nวันนี้ : (+ _)"</string>
+    <string name="box_total_recovered">"รักษาหาย\n\nTR คน\n\nวันนี้ : (+ _)"</string>
     <string name="box_today_update">"วันนี้ (date)\n\nประเทศไทยมีผู้ติดเชื้อ COVID-19\n\n- รายใหม่จำนวน (newCase) คน\n- จำนวนผู้รักษาหายวันนี้เพิ่มขึ้น (newRecovered) คน\n- รักษาตัวอยู่ในโรงพยาบาล (Hospitalized) คน\n- ผู้เสียชีวิตรายใหม่ (newDeath) คน"</string>
 
     <string name="box_you_can_help">"คุณเองก็สามารถช่วยหยุดการเเพร่ระบาดได้เพียง..."</string>
