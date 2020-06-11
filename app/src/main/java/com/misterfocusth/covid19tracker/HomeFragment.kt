@@ -1,12 +1,7 @@
 package com.misterfocusth.covid19tracker
 
 import android.app.ProgressDialog
-import android.content.Intent
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
-import android.net.Uri
 import android.os.Bundle
-import android.text.Html
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -15,14 +10,11 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import androidx.browser.customtabs.CustomTabsIntent
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
-import com.misterfocusth.covid19tracker.model.HistoryDataModel
 import org.json.JSONException
 import org.json.JSONObject
 
@@ -36,17 +28,13 @@ class HomeFragment : Fragment(), View.OnClickListener {
     private lateinit var textTotalCases: TextView
     private lateinit var textTotalRecovered : TextView
 
-    private lateinit var btnReportIssues: Button
-    private lateinit var btnOpenBrowser : Button
-
-    lateinit var progressDialog : ProgressDialog
+    private lateinit var progressDialog : ProgressDialog
 
     private var TAG = "MainActivity : "
 
     companion object {
         private lateinit var btnRefresh: ImageView
         private const val API_URL = "https://covid19.th-stat.com/api/open/today"
-        private const val OFFICIAL_URL = "https://covid19.ddc.moph.go.th/"
         var replacedData = arrayOfNulls<String>(8) // Received Data + TextViews Text
         var textViewData = arrayOfNulls<String>(7) // Original TextViews Text
         var receivedData = arrayOfNulls<String>(8) // Received Data From API
@@ -69,12 +57,6 @@ class HomeFragment : Fragment(), View.OnClickListener {
         btnRefresh = rootView.findViewById(R.id.imageRefresh)
         btnRefresh.setOnClickListener(this)
 
-        // UI Components - Buttons
-//        btnReportIssues = rootView.findViewById(R.id.btn_reportIssue)
-//        btnReportIssues.setOnClickListener(this)
-//        btnOpenBrowser = rootView.findViewById(R.id.btn_viewOnBrowser)
-//        btnOpenBrowser.setOnClickListener(this)
-
         fetchData()
 
         return rootView
@@ -82,23 +64,11 @@ class HomeFragment : Fragment(), View.OnClickListener {
 
     override fun onClick(v: View?) {
         if (v != null) {
-            if (v.id.equals(R.id.imageRefresh)) {
+            if (v.id == R.id.imageRefresh) {
                 fetchData()
             }
-//            if (v.id == R.id.btn_reportIssue) {
-//                val intent = Intent(Intent.ACTION_SENDTO)
-//                intent.type = "text/plain"
-//                intent.putExtra(Intent.EXTRA_EMAIL, "Silapakdeewong2546.3@gmail.com")
-//                intent.putExtra(Intent.EXTRA_SUBJECT, "Report_Issues - COVID-19 TH Situation Tracker (รายงานข้อผิดพลาด)")
-//                intent.putExtra(Intent.EXTRA_TEXT, "Explain Your Problem Here ! - อธิบายปัญหาของคุณมาเลย")
-//                startActivity(Intent.createChooser(intent, "กรุณาเลือกเเอพพลิเคชั่นเพื่อดำเนินการต่อ"))
-//            } else if (v.id == R.id.btn_viewOnBrowser) {// Open Browser Link WIth ChromeCustomTabs
-//                    val builder = CustomTabsIntent.Builder()
-//                    val customTabsIntent = builder.build()
-//                    customTabsIntent.launchUrl(v.context, Uri.parse(OFFICIAL_URL))
-//                }
-            }
         }
+    }
 
     private fun fetchData() {
         progressDialog = ProgressDialog(context)
@@ -123,7 +93,6 @@ class HomeFragment : Fragment(), View.OnClickListener {
                         receivedData[5] = jsonObject.getString("Confirmed") // GET : Total Confirmed
                         receivedData[6] = jsonObject.getString("Recovered") // GET : Total Recovered
                         receivedData[7] = jsonObject.getString("Deaths") // GET : Total Deaths
-                        Log.i(TAG, "onCreateView: " + receivedData.toString())
                         replaceData() // Replace Received Data To TextViews
                         updateTextView() // Update Text On TextViews
                     } catch (e: JSONException) {

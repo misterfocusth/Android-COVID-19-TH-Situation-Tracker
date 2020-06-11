@@ -13,7 +13,7 @@ class WarningAndPreventFragment : Fragment() {
 
     companion object {
         private lateinit var btnCheck: Button
-        private val CHECK_WEBSITE = "https://covid19.ddc.moph.go.th/th/self_screening"
+        private const val CHECK_WEBSITE = "https://covid19.ddc.moph.go.th/th/self_screening"
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {

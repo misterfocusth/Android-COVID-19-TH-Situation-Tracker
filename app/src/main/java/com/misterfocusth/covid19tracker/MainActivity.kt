@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
     private var myRef: DatabaseReference? = null
 
     companion object {
-        private val DATASNAPSHOT_CHILD = "versionInfo"
+        private const val DATASNAPSHOT_CHILD = "versionInfo"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

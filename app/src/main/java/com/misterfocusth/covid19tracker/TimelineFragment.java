@@ -34,11 +34,6 @@ import java.util.Objects;
 
 public class TimelineFragment extends Fragment {
 
-    private RecyclerView recyclerView;
-
-    private LinearLayoutManager linearLayoutManager;
-    private DividerItemDecoration dividerItemDecoration;
-
     private List<HistoryDataModel> dataList;
     private RecyclerView.Adapter adapter;
 
@@ -51,18 +46,14 @@ public class TimelineFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_timeline, container, false);
 
-        recyclerView = rootView.findViewById(R.id.recyclerView);
+        RecyclerView recyclerView = rootView.findViewById(R.id.recyclerView);
 
         dataList = new ArrayList<>();
         adapter = new MyRecyclerViewAdapter(dataList, getContext());
 
-        linearLayoutManager = new LinearLayoutManager(getContext());
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(), linearLayoutManager.getOrientation());
-
-//        recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(linearLayoutManager);
-//        recyclerView.addItemDecoration(dividerItemDecoration);
         recyclerView.setAdapter(adapter);
 
         getData(getContext());
@@ -77,39 +68,31 @@ public class TimelineFragment extends Fragment {
         progressDialog.setCancelable(false);
         progressDialog.show();
 
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, URL, null, new Response.Listener<JSONObject>() {
-            @Override
-            public void onResponse(JSONObject response) {
-                try {
-                    Log.i(TAG, "onResponse: " + response.toString());
-                    JSONArray jsonArray = response.getJSONArray("Data");
-                    Log.i(TAG, "onResponse: " + jsonArray);
-                    for (int i = 0 ; i < jsonArray.length() ; i++) {
-                        JSONObject jsonObject = jsonArray.getJSONObject(i);
-                        HistoryDataModel dataModel = new HistoryDataModel();
-                        dataModel.setDay(String.valueOf(i + 1));
-                        dataModel.setDate(jsonObject.getString("Date"));
-                        dataModel.setNewConfirmed(jsonObject.getString("NewConfirmed"));
-                        dataModel.setNewRecovered(jsonObject.getString("NewRecovered"));
-                        dataModel.setNewDeaths(jsonObject.getString("NewDeaths"));
-                        dataModel.setConfirmed(jsonObject.getString("Confirmed"));
-                        dataModel.setRecovered(jsonObject.getString("Recovered"));
-                        dataModel.setDeaths(jsonObject.getString("Deaths"));
-                        Log.i(TAG, "onResponse: " + dataModel.date);
-                        dataList.add(dataModel);
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, URL, null, response -> {
+            try {
+                Log.i(TAG, "onResponse: " + response.toString());
+                JSONArray jsonArray = response.getJSONArray("Data");
+                Log.i(TAG, "onResponse: " + jsonArray);
+                for (int i = 0 ; i < jsonArray.length() ; i++) {
+                    JSONObject jsonObject = jsonArray.getJSONObject(i);
+                    HistoryDataModel dataModel = new HistoryDataModel();
+                    dataModel.setDay(String.valueOf(i + 1));
+                    dataModel.setDate(jsonObject.getString("Date"));
+                    dataModel.setNewConfirmed(jsonObject.getString("NewConfirmed"));
+                    dataModel.setNewRecovered(jsonObject.getString("NewRecovered"));
+                    dataModel.setNewDeaths(jsonObject.getString("NewDeaths"));
+                    dataModel.setConfirmed(jsonObject.getString("Confirmed"));
+                    dataModel.setRecovered(jsonObject.getString("Recovered"));
+                    dataModel.setDeaths(jsonObject.getString("Deaths"));
+                    Log.i(TAG, "onResponse: " + dataModel.date);
+                    dataList.add(dataModel);
                 }
-                adapter.notifyDataSetChanged();
-                progressDialog.dismiss();
+            } catch (JSONException e) {
+                e.printStackTrace();
             }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.i(TAG, "onResponse: Error !");
-            }
-        });
+            adapter.notifyDataSetChanged();
+            progressDialog.dismiss();
+        }, error -> Log.i(TAG, "onResponse: Error !"));
         RequestQueue requestQueue = Volley.newRequestQueue(Objects.requireNonNull(context));
         requestQueue.add(jsonObjectRequest);
     }

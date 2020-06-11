@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:contentDescription="@string/CD">
@@ -38,7 +37,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/imageView7"
+                android:id="@+id/imageViewInfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"
@@ -133,30 +132,6 @@
                 app:layout_constraintStart_toEndOf="@+id/imageViewDeveloper"
                 app:layout_constraintTop_toTopOf="@+id/imageViewDeveloper" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <!--        <com.mikhaellopez.circularimageview.CircularImageView-->
-<!--            android:id="@+id/circularImageView"-->
-<!--            android:layout_width="50dp"-->
-<!--            android:layout_height="50dp"-->
-<!--            android:layout_marginTop="20dp"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/imageViewDeveloper"-->
-<!--            app:srcCompat="@drawable/img_github" />-->
-
-<!--        <Button-->
-<!--            android:id="@+id/button"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="40dp"-->
-<!--            android:layout_marginTop="20dp"-->
-<!--            android:layout_marginBottom="75dp"-->
-<!--            android:background="@drawable/shape_btn_github"-->
-<!--            android:padding="10dp"-->
-<!--            android:text="@string/info_footer_github"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/circularImageView" />-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
